@@ -1,0 +1,87 @@
+<!-- make the pokemon selection look like the one on pokemon.com...
+link:  https://www.pokemon.com/us/pokedex
+
+we want it to look like tiles so that it sa clean look.
+    the tile needs to have name and pic and dexID... no need for anything else.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        .back-button {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          background-color: yellow;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+      </style>
+    
+      <button class="back-button" onclick="location.href='../SplashPage/SplashPage.html'">Back to SplashScreen</button>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="SelectPokemon.css">
+</head>
+<body>
+    <header>
+        <h1>Pokédex</h1>
+    </header>
+    <main>
+        <div class="pokemon-grid" id="pokemon-grid">
+            <!-- Pokémon cards will go here -->
+        </div>
+    </main>
+    <footer>
+        <p>Made with ❤️ by a Pokémon fan</p>
+    </footer>
+
+    <script>
+        // Function to fetch Pokémon data from the server
+        function queryPokemon() {
+            fetch('/api/pokemon')
+                .then(response => response.json())
+                .then(data => {
+                    const pokemonGrid = document.getElementById('pokemon-grid');
+                    pokemonGrid.innerHTML = ''; // Clear existing content
+
+                    data.forEach(pokemon => {
+                        const card = document.createElement('div');
+                        card.className = 'pokemon-card';
+                        card.innerHTML = `
+                            <a href="http://localhost:3000/PokemonStats/PokemonStats.html?id=${pokemon.Pokedex_ID}">${pokemon.Name}</a>
+                            <p>ID: #${pokemon.Pokedex_ID}</p>
+                        `;
+                        pokemonGrid.appendChild(card);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching Pokémon:', error);
+                });
+        }
+
+        // Fetch Pokémon data on page load
+        document.addEventListener('DOMContentLoaded', queryPokemon);
+
+        // Search functionality
+        document.getElementById('search').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.pokemon-card');
+            cards.forEach(card => {
+                const name = card.querySelector('h3').textContent.toLowerCase();
+                const id = card.querySelector('p:nth-child(4)').textContent.toLowerCase();
+                if (name.includes(query) || id.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

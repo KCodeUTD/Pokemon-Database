@@ -1,0 +1,87 @@
+/* Styling for the guessing game page */
+.guess-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background */
+    height: 100vh; /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the content */
+    align-items: center; /* Horizontally centers the content */
+  }
+  
+  /* Container for the image */
+  .image-container {
+    margin-top: 20px; /* Adds space between text and image */
+  }
+  
+  /* Styling for the Pikachu silhouette image */
+  .pika-image {
+    width: 300px; /* Adjust width as necessary */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centers the image horizontally */
+    filter: brightness(0%);
+  }
+
+  img {
+    filter: brightness(0%);
+  }
+  
+  /* Container for the search bar and submit button */
+  .search-bar-container {
+    display: flex; /* Use flexbox to arrange items horizontally */
+    align-items: center; /* Vertically align items in the center */
+    justify-content: center; /* Center align the items horizontally */
+    margin-top: 30px; /* Adds space between the image and the search bar */
+  }
+  
+  /* Styling for the search bar input */
+  .search-bar {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    color: #333;
+    margin-right: 10px; /* Adds space between the input and button */
+  }
+  
+  .search-bar::placeholder {
+    color: #888; /* Placeholder text color */
+  }
+  
+  /* Styling for the submit button */
+  .submit-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049; /* Darker green when hovered */
+  }
+  
+  /* Styling for the dropdown list (initially hidden) */
+  .pokemon-dropdown-container {
+    display: none; /* Hide the dropdown by default */
+    margin-top: 20px;
+  }
+  
+  .pokemon-dropdown {
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    background-color: white;
+    font-size: 1rem;
+    color: #333;
+    max-height: 300px; /* Limits the height of the dropdown */
+    overflow-y: scroll; /* Allows scrolling if the list exceeds max height */
+  }
+  

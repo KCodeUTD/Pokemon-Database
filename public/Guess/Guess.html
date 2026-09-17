@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who's that Pokémon!</title>
+  <link rel="stylesheet" href="guess.css"> <!-- Use separate CSS for guessing game -->
+</head>
+<body>
+  <style>
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: yellow;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+
+  <button class="back-button" onclick="location.href='../SplashPage/SplashPage.html'">Back to SplashScreen</button>
+
+  <div class="guess-container">
+    <h1>Who's that Pokémon!</h1>
+
+    <!-- Image container for the silhouette -->
+    <div class="image-container">
+      <img src="images/pikachu.png" alt="pikachu-dark" class="pika-image" id="pika-image">
+    </div>
+
+    <div class="search-bar-container">
+        <input type="text" id="search-bar" placeholder="Search Pokémon..." class="search-bar">
+        <!-- Submit Button -->
+        <button type="button" id="submit-btn" class="submit-btn">Submit</button>
+    </div>
+
+    <div id="pokemon-dropdown-container" class="pokemon-dropdown-container">
+        <select id="pokemon-dropdown" class="pokemon-dropdown" size="10">
+          <option value="bulbasaur">Bulbasaur</option>
+          <option value="charmander">Charmander</option>
+          <option value="squirtle">Squirtle</option>
+          <option value="pikachu">Pikachu</option>
+          <option value="jigglypuff">Jigglypuff</option>
+          <option value="meowth">Meowth</option>
+          <option value="psyduck">Psyduck</option>
+          <option value="rattata">Rattata</option>
+          <option value="ekans">Ekans</option>
+          <option value="geodude">Geodude</option>
+          <option value="pidgey">Pidgey</option>
+          <option value="zubat">Zubat</option>
+          <option value="sandshrew">Sandshrew</option>
+          <option value="abra">Abra</option>
+          <option value="bellsprout">Bellsprout</option>
+          <option value="diglett">Diglett</option>
+          <option value="machop">Machop</option>
+          <option value="magnemite">Magnemite</option>
+        </select>
+      </div>
+  </div>
+
+  <script>
+    // Get elements for the search bar, dropdown container, and dropdown
+    const searchBar = document.getElementById('search-bar');
+    const dropdownContainer = document.getElementById('pokemon-dropdown-container');
+    const pokemonDropdown = document.getElementById('pokemon-dropdown');
+    const options = pokemonDropdown.options;
+    const submitBtn = document.getElementById('submit-btn');
+    const image = document.getElementById('pika-image');
+
+    // Initially hide the dropdown container
+    dropdownContainer.style.display = 'none';
+
+    // Show the dropdown when search bar is clicked
+    searchBar.addEventListener('click', function() {
+      dropdownContainer.style.display = 'block';
+    });
+
+    // Hide the dropdown when clicking outside of the search bar or dropdown
+    document.addEventListener('click', function(event) {
+      if (!searchBar.contains(event.target) && !dropdownContainer.contains(event.target)) {
+        dropdownContainer.style.display = 'none';
+      }
+    });
+
+    // When a user selects a Pokémon, fill the search bar with the selected Pokémon's name
+    pokemonDropdown.addEventListener('change', function() {
+      searchBar.value = pokemonDropdown.value;
+    });
+
+    // Function to filter the dropdown options based on the search input
+    searchBar.addEventListener('input', function() {
+      const filter = searchBar.value.toLowerCase();
+      
+      // Loop through all options and hide those that do not match the filter
+      for (let i = 0; i < options.length; i++) {
+        const option = options[i];
+        const optionText = option.text.toLowerCase();
+        
+        if (optionText.includes(filter)) {
+          option.style.display = ''; // Show the option if it matches
+        } else {
+          option.style.display = 'none'; // Hide the option if it doesn't match
+        }
+      }
+    });
+
+    // Submit button functionality to change the image if search bar contains "Pikachu"
+    submitBtn.addEventListener('click', function() {
+      if (searchBar.value.toLowerCase() === 'pikachu') {
+      //  image.src = 'images/pikachu.png'; // Change the image to Pikachu's normal image
+      //  image.alt = 'pikachu-normal'; // Update the alt text
+        let imageElement = document.getElementById("pika-image")
+        imageElement.style.filter = "brightness(100%)"
+      }
+    });
+  </script>
+</body>
+</html>

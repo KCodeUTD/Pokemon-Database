@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Screen Image</title>
+    <link rel="stylesheet" href="../SplashPage/SplashPage.css">
+    <div class = 'buttons-container'>
+        <a href="../SelectPokemon/SelectPokemon.html"><button></button></a>
+        <a href="../Items/Items.html"><button></button></a>
+        <a href="../Moves/Moves.html"><button></button></a>
+        <a href="../Guess/Guess.html"><button></button></a>
+        <button></button>
+        <button></button>
+    </div>
+    <style>
+        /* Ensure the body and html take up the full viewport */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .buttons-container {
+            position: relative;
+            width: 400px; /* Adjust based on your splash image width */
+            height: 250px; /* Adjust based on your splash image height */
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            grid-template-rows: repeat(3, 1fr); /* Three rows */
+            gap: 10px 80px; /* Adjust space between buttons if needed */
+            margin-top: 210px;
+            margin-right: 250px;
+        }
+        button{
+            width: 280px;
+            height: 100px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
+
+        /* Fullscreen image */
+        body {
+            background-image: url('./SplashPage.png'); /* Replace with your image path */
+            background-size: contain; /* Make sure the entire image fits within the screen */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Don't repeat the image */
+            height: 100vh; /* Make sure it takes the full height */
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    
+</head>
+
+</html>

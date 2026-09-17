@@ -1,0 +1,9 @@
+.buttons-container {
+    position: relative;
+    width: 800px; /* Adjust based on your splash image width */
+    height: 600px; /* Adjust based on your splash image height */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: repeat(3, 1fr); /* Three rows */
+    gap: 20px; /* Adjust space between buttons if needed */
+  }

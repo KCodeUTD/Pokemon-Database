@@ -1,0 +1,74 @@
+/* Basic Reset and Body Styling */
+body {
+  background-color: #c72127; /* Classic Pokédex red */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Main Pokédex Container */
+.pokedex-container {
+  background-color: #f9f9f9; /* Light gray for contrast */
+  max-width: 1200px;
+  max-height: 800px;
+  width: 90vw;
+  height: 90vh;
+  margin: auto;
+  border: 5px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5); /* Shadow for added depth */
+  overflow:scroll;
+}
+
+/* Centered Title at the Top */
+.pokedex-title {
+  font-weight: bold;
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* Table container */
+.item-table {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 2px solid #000000;
+    padding: 8px;
+}
+
+th {
+    background-color: #c72127;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Headline styling */
+h2 {
+    margin-top: 20px;
+    color: #000000;
+}

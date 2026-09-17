@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Items</title>
+  <link rel="stylesheet" href="items.css">
+</head>
+<body>
+
+  <style>
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: yellow;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+
+  <button class="back-button" onclick="location.href='../SplashPage/SplashPage.html'">Back to SplashScreen</button>
+
+  <div class="pokedex-container">
+    <!-- Centered Title at the Top -->
+    <div class="pokedex-title">Items</div>
+
+    <!-- Wrapper for Info Display and Scrollable Pokémon List -->
+    <div class="content">
+        <div class="item-table">
+            <h2>Pokémon Items</h2>
+            <table id="items-table">
+                <thead>
+                    <tr>
+                        <th>Name Of Item</th>
+                        <th>Catagory</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be added dynamically using JavaScript -->
+                </tbody>
+            </table>
+        </div>
+      
+     
+    </div>
+  </div>
+
+  <script src="Items.js"></script>
+</body>
+</html>

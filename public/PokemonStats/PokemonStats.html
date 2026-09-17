@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic Pokédex</title>
+  <link rel="stylesheet" href="../PokemonStats/PokemonStats.css">
+</head>
+<body>
+
+  <style>
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: yellow;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+
+  <button class="back-button" onclick="location.href='../SplashPage/SplashPage.html'">Back to SplashScreen</button>
+
+  <div class="pokedex-container">
+    <!-- Centered Title at the Top -->
+    <div class="pokedex-title">Pokemon Info</div>
+
+    <!-- Wrapper for Info Display and Scrollable Pokémon List -->
+    <div class="content">
+      <!-- Left Side: Pokémon Info Display -->
+      <div class="info-display">
+        <h2 id="pokemon-name">Pikachu</h2> <!-- Pokémon name displayed higher up -->
+        <div class="pokemon-details" id="pokemon-details">
+          <div>          
+            <img src="../images/pikachu.png" alt="Pokemon Image" id="pokemon-image"> <!-- Placeholder image -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Pokémon Stats -->
+      <div class="pokemon-list">
+        <h1>PokedexID:</h1>
+        <h1>Name:</h1>
+        <h1>Type:</h1>
+        <h1>Generation:</h1>
+        <h1>Evolves Into:</h1>
+        <h1>Smogon Catagory:</h1>
+        <h1>Pokemon Stats:</h1>
+        <h2>HP:</h2>
+        <h2>Attack:</h2>
+        <h2>Defense:</h2>
+        <h2>Special Attack:</h2>
+        <h2>Special Defense:</h2>
+        <h2>Speed:</h2>
+      </div>
+    </div>
+  </div>
+
+  <script src="../PokemonStats/PokemonStats.js"></script>
+</body>
+</html>
